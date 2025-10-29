@@ -1,0 +1,200 @@
+.mint-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Animated glowing background */
+.hero-glow {
+  position: absolute;
+  top: -30%;
+  left: -20%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at 30% 40%, #3b82f6, transparent 40%),
+              radial-gradient(circle at 70% 60%, #8b5cf6, transparent 40%);
+  filter: blur(120px);
+  z-index: 0;
+  animation: pulseGlow 10s ease-in-out infinite alternate;
+}
+@keyframes pulseGlow {
+  from { transform: scale(1); opacity: 0.8; }
+  to { transform: scale(1.2); opacity: 1; }
+}
+
+.mint-header {
+  text-align: center;
+  z-index: 2;
+  margin-bottom: 2.5rem;
+}
+
+.mint-header h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #60a5fa, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.6rem;
+}
+
+.mint-header p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
+}
+
+.mint-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Mint Card */
+.mint-card {
+  width: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.15);
+  backdrop-filter: blur(16px);
+  transition: all 0.4s ease;
+}
+.mint-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 50px rgba(99, 102, 241, 0.35);
+}
+
+.mint-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.mint-card-header h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.status-pill {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.mint-stats {
+  font-size: 0.95rem;
+  color: #d1d5db;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+.mint-stats span {
+  color: #60a5fa;
+  font-weight: 500;
+}
+
+/* Progress Bar */
+.progress-container {
+  margin-bottom: 1.5rem;
+}
+.progress-bar {
+  height: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #9333ea);
+  border-radius: 12px;
+  transition: width 0.5s ease-in-out;
+}
+.progress-text {
+  display: block;
+  font-size: 0.9rem;
+  color: #a5b4fc;
+  margin-top: 0.5rem;
+}
+
+/* Mint Controls */
+.mint-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.mint-controls input {
+  width: 70px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem;
+}
+.mint-controls button {
+  flex: 1;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+.mint-controls button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+}
+
+/* NFT Preview */
+.nft-preview {
+  width: 340px;
+  text-align: center;
+}
+.nft-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
+}
+.nft-frame img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  transition: transform 0.5s ease;
+}
+.nft-frame img:hover {
+  transform: scale(1.06);
+}
+.nft-preview h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+.nft-preview p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 768px) {
+  .mint-header h1 {
+    font-size: 2.2rem;
+  }
+  .mint-card,
+  .nft-preview {
+    width: 100%;
+    max-width: 420px;
+  }
+}
